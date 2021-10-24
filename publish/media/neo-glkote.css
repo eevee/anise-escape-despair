@@ -1,0 +1,259 @@
+/* GlkOte alternative stylesheet
+ * Designed by Eevee <eevee.git@veekun.com> for Glkote
+ * <http://eblong.com/zarf/glk/glkote.html>
+ * 
+ * This CSS stylesheet is in the public domain. Do whatever you want
+ * with it.
+ */
+
+/*** These parts control positioning, and are mandatory to claim glk support ***/
+
+body {
+  margin: 0;
+}
+#gameport {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+#windowport {
+  width: 100%;
+  height: 100%;
+}
+
+#errorpane {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+
+#errorcontent {
+}
+
+#loadingpane {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 20%;
+}
+
+.WindowFrame {
+  position: absolute;
+  margin: 0px;
+}
+
+.BufferWindow {
+  overflow: scroll;   /* vertical scrollbar is mandatory */
+  overflow-x: hidden; /* but horizontal scrollbar is forbidden */
+}
+
+.BufferWindow img.image-floated-left {
+  display: block;
+  float: left;
+}
+.BufferWindow img.image-floated-right {
+  display: block;
+  float: right;
+}
+
+.BufferWindow img.image-inline-top {
+  vertical-align: top;
+}
+.BufferWindow img.image-inline-middle {
+  vertical-align: middle;
+}
+.BufferWindow img.image-inline-bottom {
+  vertical-align: bottom;
+}
+
+.float-clear {
+  /* Special "clear floats" token.  This isn't supposed to break the text when
+   * there's nothing to clear, but alas, CSS clear only works on blocks.
+   * Hopefully nobody wants to clear except at the start of a line anyway.
+   */
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+}
+
+.BufferLine {
+}
+
+.GridWindow {
+  overflow: hidden;
+  font-family: monospace;  /* MANDATORY */
+}
+
+.GridLine {
+  white-space: pre; /* required for spaces to work right */
+}
+
+.GraphicsWindow {
+  overflow: hidden;
+}
+
+.InvisibleCursor {
+  /* This provides the padding below the last line of text (and the input
+     prompt). Without this, they'd be flush against the bottom of the
+     window, which would be ugly. Do not modify this CSS class. */
+display: inline-block;
+  position: relative;
+  padding-bottom: 1.2em;
+}
+
+.MorePrompt {
+  /* This describes the "More" prompt that flashes in the bottom right corner
+     of a window when it needs paging. */
+  position: absolute;
+}
+
+.Input {
+  /* Eliminate all <input> decorations, so this class looks like a cursor in
+     the window itself. */
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  outline-width: 0px;
+  outline-style: none;
+  background: none;
+
+  /* Make sure the font is inherited from the parent, not ordained by the
+     browser. */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+
+
+/*** These parts are eye candy ***/
+
+/* Let everything inherit font settings from the root element. */
+/* Input, of course, needs explicit mention since it has UA styles */
+#gameport {
+    font-family: Merriweather, Palatino, Georgia, serif;
+    font-size: 20px;
+    letter-spacing: 0.25px;
+    line-height: 1.5;
+  background: hsl(240, 5%, 85%);
+}
+
+
+
+.GridWindow,
+.Style_preformatted {
+    font-family: "Source Code Pro", Inconsolata, "Ubuntu Mono", "Droid Sans Mono", "Bitstream Vera Sans Mono", "Monaco", "Courier New", monospace;
+}
+
+#errorpane {
+  padding: 0.5em;
+  text-align: center;
+  background: hsl(20, 90%, 90%);
+  border-bottom: 1px solid hsl(20, 90%, 60%);
+}
+
+#errorcontent {
+}
+
+
+
+.WindowFrame {
+  /* Default background of windows */
+  background: url(//eev.ee/theme/images/textured_paper.png) hsl(240, 5%, 99%);
+}
+
+.BufferWindow {
+    padding: 1em;
+}
+
+.BufferWindow img.image-floated-left {
+    margin: 0 0.5em 0.33em 0;
+}
+.BufferWindow img.image-floated-right {
+    margin: 0 0 0.5em 0.5em;
+}
+
+.GridWindow {
+  background: hsl(240, 5%, 93%);
+  padding: 0.5em;
+}
+
+.MorePrompt {
+  /* This describes the "More" prompt that flashes in the bottom right corner
+     of a window when it needs paging. */
+  font-weight: bold;
+  background: hsl(0, 90%, 40%);
+  color: white;
+  opacity: 0.8;
+  line-height: 1;
+  padding: 0.5em 0.5em 0.25em 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.Input,
+.Style_input {
+  /* This class mimicks the Style_input class. */
+  font-weight: bold;
+  color: hsl(225, 80%, 50%);
+
+  /* Breathing room for the prompt */
+    margin-left: 0.25em;
+}
+
+
+/* The following are the standard Glk styles. */
+
+.Style_normal {
+}
+
+.Style_emphasized {
+  font-style: italic;
+}
+
+.Style_preformatted {
+    /* handled above */
+}
+
+.Style_header {
+  font-weight: bold;
+}
+
+.BufferWindow .Style_header {
+  font-size: 1.2em;
+}
+
+.Style_subheader {
+  font-weight: bold;
+}
+
+.Style_alert {
+  font-weight: bold;
+}
+
+.Style_note {
+  font-style: italic;
+}
+
+.Style_blockquote {
+    /* This will wreck things if this style appears mid-line, but the spec does
+       warn that indentation only makes sense for an entire paragraph. */
+    display: block;
+    margin: 0 2em;
+}
+
+.Style_input {
+    /* handled above */
+}
+
+.Style_user1 {
+}
+
+.Style_user2 {
+}
+
+/* End of GlkOte default stylesheet. */

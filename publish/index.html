@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quixe</title>
+
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<link href="https://fonts.googleapis.com/css?family=Merriweather&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="media/neo-glkote.css" type="text/css">
+<link rel="stylesheet" href="media/dialog.css" type="text/css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Star Anise Chronicles: Escape from the Chamber of Despair">
+<meta property="og:description" content="Play as Star Anise and make your most daring escape yet!">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://c.eev.ee/anise-escape-despair/cover.png">
+
+<script src="lib/jquery-1.12.4.min.js" type="text/javascript"></script>
+<script src="lib/glkote.min.js" type="text/javascript"></script>
+<script src="lib/quixe.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+game_options = {
+  default_story: 'anise-escape-despair.gblorb',
+  use_query_story: false,
+  log_execution_time: true,
+  set_page_title: true
+};
+</script>
+
+</head>
+<body onload="GiLoad.load_run();">
+
+<div id="gameport">
+<div id="windowport">
+<noscript><hr>
+<p>You'll need to turn on Javascript in your web browser to play this game.</p>
+<hr></noscript>
+</div>
+<div id="loadingpane">
+<img src="media/waiting.gif" alt="LOADING"><br>
+<em>&nbsp;&nbsp;&nbsp;Loading...</em>
+</div>
+<div id="errorpane" style="display:none;"><div id="errorcontent">...</div></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+/Star Anise Chronicles: Escape from the Chamber of Despair.ulx
+
+### Build artifacts
+# The game itself, as a self-contained gblorb.  I don't know why I put it here.
+/Star Anise Chronicles: Escape from the Chamber of Despair.gblorb
+# ...a single-line, 16MB XML file, which appears to be a parse tree??
+/gameinfo.dbg
+# Metadata for an online IF repository I guess?
+/Star Anise Chronicles: Escape from the Chamber of Despair.inform/Metadata.iFiction
+# The blurb, which is...  a list of /instructions/ for generating the gblorb, I think
+/Star Anise Chronicles: Escape from the Chamber of Despair.inform/Release.blurb
+# XML list of assets
+/Star Anise Chronicles: Escape from the Chamber of Despair.inform/manifest.plist
+# 7 -> 6 compiler output, including full generated Inform 6 source code
+/Star Anise Chronicles: Escape from the Chamber of Despair.inform/Build/
+# HTML index of the whole game, intended for the dev and shown in the Inform 7 GUI
+/Star Anise Chronicles: Escape from the Chamber of Despair.inform/Index/
+# Website that Inform 7 generates and which I do not care about in the slightest
+/Star Anise Chronicles: Escape from the Chamber of Despair.materials/Release/
